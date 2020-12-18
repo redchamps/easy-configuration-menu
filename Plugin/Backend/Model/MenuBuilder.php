@@ -107,7 +107,7 @@ class MenuBuilder
     ) {
         $data = [
             'id'       => $id,
-            'title'    => $title,
+            'title'    => $this->formatTitle($title),
             'module'   => $module,
             'resource' => $resource
         ];
@@ -119,5 +119,14 @@ class MenuBuilder
                 'data' => $data
             ]
         );
+    }
+
+    /**
+     * @param string $title
+     * @return string
+     */
+    protected function formatTitle(string $title): string
+    {
+        return preg_match('/^.{1,50}\b/s', $title, $match)?$match[0]:$title;
     }
 }
