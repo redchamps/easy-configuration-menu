@@ -21,7 +21,7 @@ instead of
 
 > composer require redchamps/module-easy-config-menu
 
-**If you are using our other extension [Clean Admin Menu](https://github.com/redchamps/clean-admin-menu") then please make sure to update it to version` 1.1.0` or higher available version.**
+**If you are using our other extension [Clean Admin Menu](https://github.com/redchamps/clean-admin-menu) then please make sure to update it to version` 1.1.0` or higher available version.**
 
 ## Authors
 
