@@ -3,13 +3,13 @@ namespace RedChamps\EasyConfigMenu\Plugin\Backend\Model;
 
 use Psr\Log\LoggerInterface;
 use Magento\Backend\Model\Menu;
-use Magento\Backend\Model\Menu\Builder;
-use RedChamps\EasyConfigMenu\Model\Config;
-use Magento\Config\Model\Config\Structure;
 use Magento\Backend\Model\Menu\ItemFactory;
+use Magento\Config\Model\Config\Structure;
+use RedChamps\EasyConfigMenu\Model\Config;
 
-class MenuBuilder
+class MenuConfig
 {
+    private $menuProcessed = false;
     /**
      * @var ItemFactory
      */
@@ -35,23 +35,19 @@ class MenuBuilder
         $this->logger = $logger;
     }
 
-    /**
-     * @param Builder $subject
-     * @param Menu $menu
-     *
-     * @return Menu
-     */
-    public function afterGetResult(Builder $subject, Menu $menu)
+    public function afterGetMenu(Menu\Config $subject, $result)
     {
-        try {
-            $menu = $this->addMenuItems($menu);
-        } catch (\Exception $e) {
-            $this->logger->critical(
-                "Error while generating Easy Config Menu: ".$e->getMessage()." Trace: ".$e->getTraceAsString()
-            );
+        if (!$this->menuProcessed) {
+            try {
+                $this->addMenuItems($result);
+                $this->menuProcessed = true;
+            } catch (\Exception $e) {
+                $this->logger->critical(
+                    "Error while generating Easy Config Menu: ".$e->getMessage()." Trace: ".$e->getTraceAsString()
+                );
+            }
         }
-
-        return $menu;
+        return $result;
     }
 
     /**

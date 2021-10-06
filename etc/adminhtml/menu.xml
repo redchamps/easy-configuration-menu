@@ -7,6 +7,6 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="RedChamps_EasyConfigMenu::item" title="Settings" translate="title" module="RedChamps_EasyConfigMenu" sortOrder="60" dependsOnModule="RedChamps_EasyConfigMenu" resource="RedChamps_EasyConfigMenu::item"/>
+        <add id="RedChamps_EasyConfigMenu::item" title="Settings" translate="title" module="RedChamps_EasyConfigMenu" sortOrder="70" dependsOnModule="RedChamps_EasyConfigMenu" resource="RedChamps_EasyConfigMenu::item"/>
     </menu>
 </config>

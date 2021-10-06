@@ -7,9 +7,9 @@ This Magento 2 extension will provide easily accessible configuration menu.
 That means it will create a "Settings" item in main menu & add shortcuts of all the tabs &
 sections of `Store > Configuration` in its submenu
 
-![Navigation](https://raw.githubusercontent.com/redchamps/repo-images/master/easy-config-menu/menu-view.png)
+![Navigation](https://raw.githubusercontent.com/redchamps/repo-images/master/easy-config-menu/menu-view.jpeg)
 
-So, now as an example, you can reach the payment methods settings with just 
+As an example, you can reach the payment methods settings with just 
 
 2 clicks & 1 page reload 
 
