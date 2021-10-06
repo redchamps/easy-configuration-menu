@@ -69,6 +69,7 @@ class MenuBuilder
         }
 
         foreach ($this->configStructure->getTabs() as $tab) {
+            if (!$tab->isVisible()) continue;
             $itemId = $tab->getId() . '::container';
             /** @var \Magento\Backend\Model\Menu\Item $module */
             $tabMenuItem = $this->prepareMenuItem(
